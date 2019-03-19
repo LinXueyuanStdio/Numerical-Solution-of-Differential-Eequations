@@ -11,8 +11,7 @@ n=fix((xn-x0)/h);
 if n<5, return, end; % 四阶Adams显式公式需要用到前面4个点的值，n不能小于5
 % 先用常用四阶RungeKutta法算出4个点，为四阶Adams显式公式提供4个值
 x3=x0+3*h; % 取x0,x1,x2,x3四个点
-%[x(1:4),y(1:4)]=RungeKutta( F, x0, x3, y0, h ); % x0,x1,x2,x3四个点处的值用RungeKutta法算出来
-[x(1:4),y(1:4)]=CommonRungeKutta(F, x0, x3, y0, h, [1/2 1/2 1], [1/2 0 1/2 0 0 1], [1/6 2/6 2/6 1/6]);
+[x(1:4),y(1:4)]=RungeKutta( F, x0, x3, y0, h ); % x0,x1,x2,x3四个点处的值用RungeKutta法算出来
 f(1:4)=F(x(1:4),y(1:4));
 % 下面正式开始用四阶Adams显式公式计算后面的值
 for i=4:n

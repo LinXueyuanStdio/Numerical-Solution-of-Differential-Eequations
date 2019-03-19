@@ -1,4 +1,4 @@
-function [k,X,Y,fxy,X2,Y2,X3,Y3]=RK (funfcn,fun,x0,b,C,y0,h)
+function [k,X,Y,fxy,X2,Y2,X3,Y3]=Test (funfcn,fun,x0,b,C,y0,h)
 x=x0; y=y0; p=128;
 n=fix((b-x0)/h);
 fxy=zeros(p,1);X=zeros(p,1);Y=zeros(p,length(y));
